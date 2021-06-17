@@ -1,0 +1,49 @@
+@media screen and (max-width:995px){
+    .top{
+        .nav-link{
+            display:inline-block !important;
+        }
+    }
+    #about{
+        .details-site{
+            margin-top:2rem;
+            p{
+                font-size:1.3rem;
+            }
+        }
+    }
+    #services{
+        .card{
+            margin-top:2rem;
+        }
+    }
+    #skills{
+        .card{
+            width:31rem;
+        }
+    }
+    #galary{
+        .btn_sec{
+            .nav-item{
+                font-size:1rem !important;
+                margin:0.4rem !important;
+                padding:1rem !important;
+                color: $tarsiary-color;
+            }
+        }
+        .grid{
+            margin-top: 2rem;
+        }
+    }
+    #testimonial{
+        .card{
+            margin-top:2rem;
+        }
+    }
+
+    #contact{
+        iframe{
+            width:30rem;
+        }
+    }
+}

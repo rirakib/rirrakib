@@ -1,0 +1,49 @@
+ @mixin button {
+    margin-top: 2rem;
+
+    .nav-link {
+        font-size: $para;
+        color: $secendory-color;
+        font-weight: 500;
+        letter-spacing: 0.2rem;
+        border: 0.3rem solid $primary-color;
+        padding: 1rem 2.6rem;
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        height: 0%;
+        width: 0%;
+        left: 0;
+        top: 0;
+        transition: $transition;
+    }
+
+    .nav-link:hover:after {
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@mixin title{
+    h1{
+        font-size: $title;
+        color: $secendory-color;
+        font-weight: 600;
+        position:relative;
+        display: inline-block;
+    }
+    h1::after{
+        content: '';
+        position: absolute;
+        height: 0.4rem;
+        width: 70%;
+        background-color: $tarsiary-color;
+        left: 0;
+        bottom:0;
+        margin-bottom:-1rem;
+    }
+}

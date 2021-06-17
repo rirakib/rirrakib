@@ -1,0 +1,427 @@
+@import '_var';
+@import '_responsive';
+@import '_mixin';
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style:none;
+}
+.section-margin{
+    margin:5rem 0rem;
+}
+.section-padding{
+    margin:4.5rem 0rem;
+}
+body{
+    background-color: #008080;
+}
+img{
+    width:100%;
+}
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+}
+
+    // TOP CSS START HERE 
+.top{
+    position:fixed;
+    width: 100%;
+    line-height: 4rem;
+    z-index: 999;
+    transition: $transition;
+    .navbar{
+        margin:1rem 0;
+    }
+    .navbar-brand{
+        font-size: 3rem;
+        font-weight: 600;
+        color: $secendory-color;
+        span{
+            color: $primary-color;
+            letter-spacing: 0.2rem;
+        }
+    }
+    .nav-item{
+        margin-right:1rem;
+        .nav-link{
+            font-size:2rem;
+            font-weight: 500;
+            color: $secendory-color;
+            position: relative;
+        }
+        .nav-link::after{
+            content: '';
+            position:absolute;
+            height: 0.4rem;
+            width: 0%;
+            background-color: $primary-color;
+            left:0;
+            bottom:0;
+            transition: $transition;
+        }
+        .nav-link:hover:after{
+            width: 100%;
+        }
+    }
+    .navbar-toggler-icon{
+        color: $secendory-color;
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+}
+.sticky{
+    background-color: crimson;
+}
+
+
+
+    // HOME CSS START HERE 
+
+
+
+#home{
+    background-color: $bg-color2;
+    color: $secendory-color;
+    background-attachment: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+    .main{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p{
+            font-size: $para;
+            letter-spacing: 0.4rem;
+        }
+        h1{
+            font-size: 6rem;
+            font-weight: 500;
+            color: $primary-color
+        }
+        h3{
+            font-size: $sub-title;
+        }
+        .btn{
+            margin-top:2rem;
+            @include button;
+            .nav-link::after{
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+    // ABOUT CSS START HERE 
+
+
+#about{
+    .title{
+        @include title;
+    }
+    .img-site{
+        max-height: 30rem;
+        border:0.5rem solid $secendory-color;
+        display: inline-block;
+        overflow: hidden;
+        img{
+            max-width: 36rem;
+            transition: $transition;
+        }
+    }
+    .img-site:hover img{
+        transform: scale(1.09);
+    }
+    .details-site{
+        h1{
+            color: $secendory-color;
+            font-size: $sub-title;
+        }
+        p{
+            font-size: $para;
+            text-align: justify;
+        }
+        .btn{
+            @include button;
+            .nav-link{
+                border: 0.4rem solid $tarsiary-color;
+            }
+            .nav-link::after{
+                background-color: $tarsiary-color;
+            }
+        }
+    }
+}
+
+
+    // SERVICES CSS START HERE 
+
+#services{
+    .title{
+        @include title;
+    }
+    .card{
+        padding:1.5rem;
+        background-color: $tarsiary-color;
+        color: $secendory-color;
+        transition: $transition;
+        cursor: pointer;
+        .icon{
+            font-size:4rem;
+            transition: $transition;
+        }
+        .title{
+            margin:1rem 0;
+            h3{
+                font-size: $sub-title;
+                font-weight: 500;
+                text-transform: uppercase;
+            }  
+        }
+        p{
+            text-align: justify;
+            font-size: 1.6rem;
+        }
+    }
+    .card:hover{
+        box-shadow: 5px 5px 15px 17px rgba(0,0,0,0.3);
+    }
+    .card:hover .icon{
+        color: $primary-color;
+    }
+}
+
+
+    // SKILLS CSS START HERE 
+
+#skills{
+    .title{
+        @include title;
+    }
+    .card{
+        padding:1.5rem;
+        box-shadow: 5px 5px 15px 17px rgba(0,0,0,0.3) ;
+        width: 75rem;
+        .bar{
+            margin:2rem 0;
+            .info{
+                margin-bottom: 0.5rem;
+                span{
+                    font-size:1.8rem;
+                    font-weight: 500;
+                }
+            }
+            .progress-line{
+                position:relative;
+                height: 1rem;
+                width: 100%;
+                background-color: $primary-color;
+                box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),
+                                    0px 1px rgba(255,255,255,0.8);
+                span{
+                    height: 100%;
+                    width: 80%;
+                    background-color: $tarsiary-color;
+                    position: absolute;
+                    border-radius: 1rem;
+                }
+                span::before{
+                    position:absolute;
+                    content: '';
+                    right:0;
+                    top:-1rem;
+                    height: 0;
+                    width: 0;
+                    border: 0.7rem solid transparent;
+                    border-bottom-width: 0rem;
+                    border-right-width: 0rem;
+                    border-top-color: $tarsiary-color;
+                }
+                span::after{
+                    position:absolute;
+                    content: '80%';
+                    right:0;
+                    top:-3.4rem;
+                    color: $secendory-color;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    background-color: $tarsiary-color;
+                    padding:0.2rem 0.8rem;
+                    border-radius: 0.3rem;
+                }
+            }
+            .progress-line.html span::after{
+                content:'90%';
+            }
+            .progress-line.css span::after{
+                content:'85%';
+            }
+            .progress-line.sass span::after{
+                content:'80%';
+            }
+            .progress-line.bootstrap span::after{
+                content:'90%';
+            }
+            .progress-line.javascript span::after{
+                content:'70%';
+            }
+            .progress-line.jquery span::after{
+                content:'75%';
+            }
+            .progress-line.psd span::after{
+                content:'85%';
+            }
+
+            .progress-line.html span{
+                width:90%;
+            }
+            .progress-line.css span{
+                width: 85%;
+            }
+            .progress-line.sass span{
+                width:80%;
+            }
+            .progress-line.bootstrap span{
+                width: 90%;
+            }
+            .progress-line.javascript span{
+                width: 70%;
+            }
+            .progress-line.jquery span{
+                width: 75%;
+            }
+            .progress-line.psd span{
+                width: 85%;
+            }
+
+        }
+        .bar:first-child{
+            margin-top:0;
+        }
+    }
+}
+
+#galary{
+    .title{
+        @include title;
+    }
+    .btn_sec{
+        display: flex;
+        .nav-item{
+            margin:0rem 1rem;
+            font-size: $para;
+            color: $secendory-color;
+            background-color: $tarsiary-color;
+            padding:1rem 1.6rem;
+            cursor: pointer;
+        }
+    }
+}
+
+#testimonial{
+    .title{
+        @include title;
+    }
+    .rivew{
+        font-size:1.8rem;
+        .checked {
+            color: orange;
+          }
+    }  
+}
+
+
+#contact{
+    .title{
+        @include title;
+    }
+    .grid{
+        input{
+            width:30rem;
+            height: 4rem;
+            margin-top:3rem;
+            border:none;
+            border-bottom: 0.3rem solid $tarsiary-color;
+            outline: none;
+            background-color: transparent;
+            font-size:1.7rem;
+            padding:0.7rem 0;
+            color: $tarsiary-color;
+        }
+        textarea{
+            margin-top:3rem;
+            height: 12rem;
+            width: 30rem;
+            padding:0.7rem;
+            font-size:1.7rem;
+            color: $tarsiary-color;
+            background-color: transparent;
+            outline: none;
+            border:0.3rem solid $tarsiary-color
+        }
+        .sub_btn{
+            width: 100%;
+            border:none;
+            padding:1rem 0rem;
+            background-color: $secendory-color;
+            font-weight: 500;
+            cursor: pointer;
+            border:0.4rem solid $secendory-color;
+            transition: $transition;
+        }
+        .sub_btn:hover{
+            background-color: transparent;
+        }
+        ::placeholder{
+            color: $secendory-color;
+            padding-left:1rem;
+
+        }
+    }
+    .wrapper{
+        .button{
+            display: inline-block;
+            margin:0 0.5rem;
+            height: 6rem;
+            width: 6rem;
+            background-color: crimson;
+            border-radius: 5rem;
+            cursor: pointer;
+            transition: $transition;
+            overflow: hidden;
+        }
+        .icon{
+            display: inline-block;
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+            line-height: 6rem;
+            text-align: center;
+            color: $secendory-color;
+            font-size:2.5rem;
+        }
+        .button span{
+            font-size:2rem;
+            margin-left:1rem;
+            font-weight: 500;
+            color: $secendory-color;
+        }
+        .button:hover{
+            width: 19rem;
+        }
+    }
+}
+
+
+footer{
+    background-color: $tarsiary-color;
+    color: $secendory-color;
+    padding:2rem 0rem;
+    h3{
+        font-size: $sub-title;
+    }
+}
